@@ -1,0 +1,93 @@
+﻿@base-color: #f7f7fa;
+@article-font-size: 25px;
+@font: Verdana;
+@font200: 200%;
+@font120: 120%;
+@paddingText: 2px 8px;
+@displayText: block;
+@marginText: 5px 0;
+@background-colorText: #d0d5d3;
+@borderText: 3px solid #555;
+@box-sizingText: border-box;
+
+body {
+    font-family: @font;
+    background-color: @base-color;
+}
+
+div {
+    margin: 10px;
+}
+
+.labelHead {
+    font-size: @font200;
+    display: block;
+}
+
+.labels {
+    font-size: @font120;
+    display: block;
+}
+
+.TextMessage {
+    font-size: @font200;
+    display: @displayText;
+    padding: @paddingText;
+    margin: @marginText;
+    box-sizing: @box-sizingText;
+}
+.TextMessage:focus:not(:active) {
+    background-color: @background-colorText;
+    border: @borderText;
+}
+
+.TextMail {
+    font-size: @font120;
+    display: @displayText;
+    padding: @paddingText;
+    margin: @marginText;
+    box-sizing: @box-sizingText;
+}
+.TextMail:focus:not(:active) {
+    background-color: @background-colorText;
+    border: @borderText;
+}
+
+.Menu {
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(205,216,228);
+    text-shadow: 0 -1px rgb(46,53,58);
+    user-select: none;
+    line-height: 1.2em;
+    border: 1px solid rgba(33,43,52,1);
+    border-radius: 3px;
+    background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+    padding: 1px 25px;
+}
+
+    .Menu:focus:not(:active) {
+        border: 1px solid rgb(22,32,43);
+        border-bottom: 1px solid rgb(25,34,45);
+        background: rgb(53,61,71);
+        pointer-events: none;
+    }
+
+.Send {
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(205,216,228);
+    text-shadow: 0 -1px rgb(46,53,58);
+    user-select: none;
+    line-height: 1.2em;
+    border: 1px solid rgba(33,43,52,1);
+    border-radius: 3px;
+    background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+    padding: 1px 25px;
+    margin-left: 50%;
+    position: absolute;
+}
+
+.Send:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
