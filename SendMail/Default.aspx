@@ -6,4 +6,6 @@
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="body" runat="server">
     <smc:SendMessageControl ID="Main" runat="server"></smc:SendMessageControl>
+
+    <script src="Scripts/SaveData.js"></script>
 </asp:Content>

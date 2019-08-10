@@ -3538,6 +3538,7 @@
     <Content Include="node_modules\yargs\lib\parser.js" />
     <Content Include="node_modules\yargs\lib\usage.js" />
     <Content Include="node_modules\yargs\lib\validation.js" />
+    <Content Include="Scripts\SaveData.js" />
     <Content Include="SendMessageControl.ascx" />
     <Content Include="Success.aspx" />
     <Content Include="Web.config" />

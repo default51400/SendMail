@@ -11,22 +11,32 @@ namespace SendMail
     public partial class SendMessageControl : System.Web.UI.UserControl
     {
         #region Fields
-        HttpCookie _cookieMessage;
-        HttpCookie _cookieEmail;
+
+        #region Constants
+
+        private const string EMAIL_VALUE = "EmailValue";
+        private const string MESSAGE_VALUE = "MessageValue";
+
+        #endregion Constants
+
+        private HttpCookie _cookieMessage;
+        private HttpCookie _cookieEmail;
+
         #endregion
 
         #region Methods
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            _cookieEmail = Request.Cookies["EmailValue"];
-            _cookieMessage = Request.Cookies["MessageValue"];
+            _cookieEmail = Request.Cookies[EMAIL_VALUE];
+            _cookieMessage = Request.Cookies[MESSAGE_VALUE];
             if (_cookieEmail == null)
-                _cookieEmail = new HttpCookie("EmailValue");
+                _cookieEmail = new HttpCookie(EMAIL_VALUE);
             else
                 TextEmail.Text = _cookieEmail.Value;
 
             if (_cookieMessage == null)
-                _cookieMessage = new HttpCookie("MessageValue");
+                _cookieMessage = new HttpCookie(MESSAGE_VALUE);
             else
                 TextMessage.Text = _cookieMessage.Value;
         }
@@ -44,8 +54,11 @@ namespace SendMail
             else
             {
                 IsValidMail.BackColor = System.Drawing.Color.Red;
-                if (String.IsNullOrEmpty(TextEmail.Text))
+                if (String.IsNullOrWhiteSpace(TextEmail.Text))
+                {
+                    IsValidMail.Visible = true;
                     IsValidMail.Text = "please input email";
+                }
                 else
                 {
                     IsValidMail.Visible = true;
