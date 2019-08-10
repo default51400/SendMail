@@ -4,4 +4,13 @@
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="body" runat="server">
     <asp:Label id="LabelSuccess" Text="<%$ Resources:Success %>" CssClass="labelHead" Runat="server" />
+
+    <script>
+		window.onload = function RemoveLocalStorageInput() {
+			if (typeof (Storage) !== "undefined") {
+				localStorage.removeItem("inputMail");
+				localStorage.removeItem("inputMessage");
+				}
+		}
+	</script>
 </asp:Content>

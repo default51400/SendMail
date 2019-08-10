@@ -45,20 +45,24 @@ namespace SendMail
             {
                 IsValidMail.BackColor = System.Drawing.Color.Red;
                 if (String.IsNullOrEmpty(TextEmail.Text))
-                {
                     IsValidMail.Text = "please input email";
+                else
+                {
+                    IsValidMail.Visible = true;
+                    IsValidMail.Text = "email isn't valid (Example: google@gmail.com)";
                 }
-                else IsValidMail.Text = "email isn't valid (Example: google@gmail.com)";
             }
         }
 
         protected void TextEmail_TextChanged(object sender, EventArgs e)
         {
             IsValidMail.Text = "";
+            IsValidMail.Visible = false;
             _cookieMessage.Value = TextMessage.Text;
             _cookieEmail.Value = TextMessage.Text;
             Response.Cookies.Add(_cookieMessage);
         }
+
         #endregion
     }
 }
